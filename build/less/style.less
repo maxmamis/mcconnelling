@@ -1,0 +1,48 @@
+.inner {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+section {
+	&#intro {
+		padding: 30% 0 40%;
+	}
+	&#editor {
+		padding-top: 30px;
+		background: red;
+		width: 100%;
+	}
+	&#gallery {
+		background: blue;
+		width: 100%;
+		overflow: auto;
+
+		nav {
+			ul {
+				li {
+					display: inline-block;
+				}
+			}
+		}
+
+		ul {
+			li {
+				&.video {
+					display: block;
+					width: 30%;
+					height: 200px;
+					background: #fff;
+					margin: 10px;
+					float: left;
+				}
+			}
+		}
+	}
+}
+
+footer {
+	background: red;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
