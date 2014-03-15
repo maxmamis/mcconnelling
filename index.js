@@ -1,29 +1,34 @@
 var express = require('express'),
-    config  = require('./config');
+    config  = require('./config'),
+    grunt   = require('grunt');
+
+if (config.gruntBuildPhase && config.gruntBuildPhase !== 'none') {
+    grunt.tasks(['build:' + config.gruntBuildPhase]);
+}
 
 var app = express();
 app.use(express.static(__dirname +'/public'));
 
 // TODO: make this work
 function findMcconnell (id, callback) {
-	process.nextTick(function () {
-		callback(null, {mcconnell: 'turtle'});
-	});
+    process.nextTick(function () {
+        callback(null, {mcconnell: 'turtle'});
+    });
 }
 function saveMcconnell (id) {}
 
 app.get('/mcconnell', function (req, res) {
-	findMcconnell(req.param('id'), function (err, mcconnell) {
-		if (err) {
-			return res.err(err);
-		}
+    findMcconnell(req.param('id'), function (err, mcconnell) {
+        if (err) {
+            return res.err(err);
+        }
 
-		res.send(mcconnell);
-	});
+        res.send(mcconnell);
+    });
 });
 
 app.post('/mcconnell', function (req, res) {
-	saveMcconnell(req.param('mcconnell'));
+    saveMcconnell(req.param('mcconnell'));
 });
 
 app.listen(config.port);
