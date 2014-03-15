@@ -21,11 +21,11 @@ body {
 section {
 	&#viewer {
 		padding: 10% 0 15%;
+		#intro {
+			position: relative;
+		}
 		#video {
-			display: none;
-			img {
-				width: 50%;
-			}
+			position: relative;
 		}
 	}
 	&#editor {
@@ -36,6 +36,28 @@ section {
 		.inner {
 			border-top: 1px solid #fff;
 		}
+
+		.clips {
+			margin: 15px 0;
+			img {
+				width: 250px;
+				margin: 0 15px;
+			}
+		}
+
+		input {
+			font-size: 24px;
+			padding: 6px;
+			color: #000;
+		}
+		.editor-title {
+			width: 75%;
+			margin: 15px auto;
+		}
+		.editor-time {
+			width: 100px;
+		}
+
 	}
 	&#gallery {
 		background: #fff;
