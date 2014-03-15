@@ -36,7 +36,7 @@ ul {
 body {
 	text-shadow: none;
 	box-shadow: none;
-	background: #cccccc;
+	background: #FFF;
 	font-family: 'Montserrat', sans-serif;
 
 	a {
@@ -45,11 +45,16 @@ body {
 }
 
 header {
-	color: @blue;
+	color: #fff;
+	background: @blue;
+	height: 80px;
+
+	.nav {
+		text-transform: uppercase;
+	}
 }
 
 section {
-
 	&#player {
 		max-width: 75%;
 		margin: 0 auto;
@@ -60,14 +65,29 @@ section {
 			position: relative;
 		}
 	}
+	
+	&#intro {
+		position: relative;
+		height: 30%;
+		background: @blue;
+		.cover {
+			padding-top: 6%;
+		}
+	}
 
 	&#editor {
 		padding-top: 30px;
-		background: #cccccc;
+		background: darken(@blue, 10%);
 		width: 100%;
 
 		.inner {
 			border-top: 1px solid #fff;
+		}
+
+		.timeline {
+			width: 100%;
+			background: darken(@blue, 20%);
+			height: 200px;
 		}
 
 		.clips {
@@ -81,19 +101,36 @@ section {
 		input {
 			font-size: 36px;
 			padding: 12px;
-			color: #fff;
-			background: #777;
+			color: @red;
+			background: lighten(@blue, 20%);
 			border: 0;
+
+			&::-webkit-input-placeholder {
+			   color: #fff;
+			}
+
+			&:-moz-placeholder { /* Firefox 18- */
+			   color: #fff;
+			}
+
+			&::-moz-placeholder {  /* Firefox 19+ */
+			   color: #fff;
+			}
+
+			&:-ms-input-placeholder {
+			   color: #fff;
+			}
 		}
 		.editor-title {
-			width: 100%;
-			margin: 15px auto;
+			width: 1000px;
+			margin: 15px auto 5px;
 		}
 		.editor-url {
-			width: 85%;
+			margin-left: -5px;
+			width: 850px;
 		}
 		.editor-time {
-			width: 14%;
+			width: 145px;
 		}
 
 	}
@@ -123,7 +160,7 @@ section {
 				display: block;
 				font-size: 32px;
 				font-weight: bold;
-				color: #000;
+				color: @red;
 
 				margin: 5px;
 			}
