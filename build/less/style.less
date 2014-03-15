@@ -1,12 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+@blue: rgba(40, 55, 140, 1);
+@red: rgba(180, 40, 40, 1);
+
 .inner {
 	max-width: 1200px;
 	margin: 0 auto;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
 }
 
 ul {
 	padding: 0;
 	margin: 0;
 }
+
 
 //
 //
@@ -15,7 +25,16 @@ ul {
 body {
 	text-shadow: none;
 	box-shadow: none;
-	background: #333;
+	background: #cccccc;
+	font-family: 'Montserrat', sans-serif;
+
+	a {
+		color: @red;
+	}
+}
+
+header {
+	color: @blue;
 }
 
 section {
@@ -30,7 +49,7 @@ section {
 	}
 	&#editor {
 		padding-top: 30px;
-		background: #333;
+		background: #cccccc;
 		width: 100%;
 
 		.inner {
@@ -46,26 +65,32 @@ section {
 		}
 
 		input {
-			font-size: 24px;
-			padding: 6px;
-			color: #000;
+			font-size: 36px;
+			padding: 12px;
+			color: #fff;
+			background: #777;
+			border: 0;
 		}
 		.editor-title {
-			width: 75%;
+			width: 100%;
 			margin: 15px auto;
 		}
+		.editor-url {
+			width: 85%;
+		}
 		.editor-time {
-			width: 100px;
+			width: 14%;
 		}
 
 	}
 	&#gallery {
+		text-align: left;
 		background: #fff;
 		width: 100%;
 		overflow: auto;
 
 		.btn {
-			background: #000;
+			background: lighten(@blue, 10%);
 			color: #fff;
 		}
 
