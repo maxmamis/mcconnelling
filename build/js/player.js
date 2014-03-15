@@ -7,7 +7,7 @@ var $player, $videoElements = [], currentVideoElementIndex = 0,
 
 player.load = function (mcconnell) {
 	currentMcconnell = mcconnell;
-	currentVideoIndex = 0;
+	currentVideoIndex = -1;
 };
 
 player.play = function () {
