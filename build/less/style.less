@@ -3,10 +3,33 @@
 	margin: 0 auto;
 }
 
+body {
+	#player {
+		display: none;
+	}
+
+	&.player_showing {
+		#intro {
+			display: none;
+		}
+
+		#player {
+			display: block;
+		}
+	}
+}
 section {
 	&#intro {
 		padding: 30% 0 40%;
 	}
+	&#player {
+		width: 60%;
+
+		video {
+			width: 100%;
+		}
+	}
+
 	&#editor {
 		padding-top: 30px;
 		background: red;

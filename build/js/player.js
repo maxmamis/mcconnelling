@@ -2,7 +2,7 @@
 window.MC = window.MC || {};
 var player = window.MC.player = {};
 
-var $player, $video, videoElement,
+var $player, $videoElements = [], currentVideoElementIndex = 0,
 	currentMcconnell, currentVideoIndex;
 
 player.load = function (mcconnell) {
@@ -11,28 +11,60 @@ player.load = function (mcconnell) {
 };
 
 player.play = function () {
-	nextVideo()
-	videoElement.play();
+	setupNextVideo();
+	nextVideo();
 };
 
 $(function () {
 	$player = $('#player');
-	createVideoElement();
+	createVideoElements();
 });
 
-function createVideoElement () {
-	$video = $('<video />');
-	$player.append($video);
-	videoElement = $video[0];
-	videoElement.addEventListener('ended', nextVideo);
+function createVideoElements () {
+	var $video;
+	for (var i = 0; i < 2; i++) {
+		$video = $('<video />');
+		$player.append($video);
+		$video.on('ended', nextVideo);
+		$videoElements.push($video);
+	}
 }
 
-function nextVideo () {
+function setupNextVideo () {
 	currentVideoIndex++;
 	if (currentVideoIndex >= currentMcconnell.clips.length) {
 		currentVideoIndex = 0;
 	}
-
+	var	videoElement = getNextVideoElement()[0];
 	videoElement.src = '/videos/' + currentMcconnell.clips[currentVideoIndex] + '.mov';
 }
+
+function nextVideo () {
+	var $videoElement = $videoElements[currentVideoElementIndex];
+	$videoElement.hide();
+	$videoElement = switchPlayers();
+	$videoElement.show();
+	$videoElement[0].play();
+	setupNextVideo();
+}
+
+function switchPlayers () {
+	currentVideoElementIndex = getNextVideoElementIndex();
+	return $videoElements[currentVideoElementIndex];
+}
+
+function getNextVideoElementIndex () {
+	var nextIndex = currentVideoElementIndex + 1;
+	if (nextIndex >= $videoElements.length) {
+		nextIndex = 0;
+	}
+
+	return nextIndex;
+}
+
+function getNextVideoElement () {
+	return $videoElements[getNextVideoElementIndex()];
+
+}
+
 }());

@@ -6,6 +6,7 @@ var testMcconnell = {
 };
 
 $(function () {
+	$('body').addClass('player_showing');
 	MC.player.load(testMcconnell);
 	MC.player.play();
 });
