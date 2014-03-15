@@ -3,19 +3,49 @@
 	margin: 0 auto;
 }
 
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+//
+//
+//
+
+body {
+	text-shadow: none;
+	box-shadow: none;
+	background: #333;
+}
+
 section {
-	&#intro {
-		padding: 30% 0 40%;
+	&#viewer {
+		padding: 10% 0 15%;
+		#video {
+			display: none;
+			img {
+				width: 50%;
+			}
+		}
 	}
 	&#editor {
 		padding-top: 30px;
-		background: red;
+		background: #333;
 		width: 100%;
+
+		.inner {
+			border-top: 1px solid #fff;
+		}
 	}
 	&#gallery {
-		background: blue;
+		background: #fff;
 		width: 100%;
 		overflow: auto;
+
+		.btn {
+			background: #000;
+			color: #fff;
+		}
 
 		nav {
 			ul {
@@ -26,15 +56,15 @@ section {
 		}
 
 		ul {
-			li {
-				&.video {
-					display: block;
-					width: 30%;
-					height: 200px;
-					background: #fff;
-					margin: 10px;
-					float: left;
-				}
+			padding: 30px 0 0;
+
+			li.video {
+				display: block;
+				font-size: 32px;
+				font-weight: bold;
+				color: #000;
+
+				margin: 5px;
 			}
 		}
 	}
