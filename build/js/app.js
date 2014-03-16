@@ -12,6 +12,20 @@ $(function() {
 		$('#video').fadeIn();
 	});
 
+	$("#sortable").sortable({
+	    revert: true
+	});
+
+	$('#clips-1').click(function(){
+		$('#draggable1').toggleClass('active');
+	});
+	$('#clips-2').click(function(){
+		$('#draggable2').toggleClass('active');
+	});
+	$('#clips-3').click(function(){
+		$('#draggable3').toggleClass('active');
+	});
+
 });
 
 var App = (function() {
@@ -40,3 +54,27 @@ var App = (function() {
 	};
 
 }());
+
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// Replace the 'ytplayer' element with an <iframe> and
+// YouTube player after the API code downloads.
+var player;
+function onYouTubePlayerAPIReady() {
+  player = new YT.Player('audioplayer', {
+	height: '1px',
+	width: '1px',
+	videoId: 'R1QRTHHlJ-I',
+	playerVars: {
+		autoplay: '0',
+		controls: '0',
+		modestbranding: '1',
+		showinfo: '0',
+		iv_load_policy: '3',
+		rel: '0'
+	}
+  });
+}
