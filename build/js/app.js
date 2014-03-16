@@ -9,7 +9,7 @@ $(function() {
 
 	$('#get-started').click(function(){
 		$('#intro').fadeOut();
-		$('#video').fadeIn();
+		$('#player').fadeIn();
 	});
 
 	$("#sortable").sortable({
