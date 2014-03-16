@@ -12,6 +12,7 @@
 		<title>Cover Template for Bootstrap</title>
 
 		<link href="/_/css/app.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
 
 		<!-- Just for debugging purposes. Don't actually copy this line! -->
 		<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -37,9 +38,10 @@
 		</header>
 
 		<section id="player">
+			<div id="audioplayer"></div>
 		</section>
 
-		<section id="intro">
+<!-- 		<section id="intro">
 			<div class="inner cover">
 				<h1 class="cover-heading">#mcconnelling</h1>
 				<p class="lead">Jon's on break, but the game is still on.</p>
@@ -48,19 +50,25 @@
 					<a href="#" class="btn btn-lg btn-default">Get started</a>
 				</p>
 			</div>
-		</section>
+		</section> -->
 
 		<section id="editor">
 			<div class="timeline">
-				<span class="instructions">Drag your #mcconnelling clips from below and remix!</span>
+				<!-- <span class="instructions">Drag your #mcconnelling clips from below and remix!</span><br> -->
+				<div class="demo">
+				    <div id="sortable">
+				        <div id="draggable1" class="timeline-clip"><img src="_/img/placeholder.jpg" alt=""></div>
+				        <div id="draggable2" class="timeline-clip"><img src="_/img/placeholder.jpg" alt=""></div>
+				        <div id="draggable3" class="timeline-clip"><img src="_/img/placeholder.jpg" alt=""></div>
+				    </div>
+				</div>
 			</div>
 			<div class="inner">
 				<div class="clips">
 					<h2>Clips</h2>
-					<img src="_/img/placeholder.jpg" alt="">
-					<img src="_/img/placeholder.jpg" alt="">
-					<img src="_/img/placeholder.jpg" alt="">
-					<img src="_/img/placeholder.jpg" alt="">
+					<img id="clips-1" src="_/img/placeholder.jpg" alt="">
+					<img id="clips-2" src="_/img/placeholder.jpg" alt="">
+					<img id="clips-3" src="_/img/placeholder.jpg" alt="">
 				</div>
 				<input class="editor-title" value="" placeholder="Give your work of art a name">
 				<br>
@@ -96,6 +104,8 @@
 		</footer> -->
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+		<script src="/_/js/app.min.js"></script>
 		<script src="/_/js/player-ck.js"></script>
 		<script src='/_/js/mcconnelling-ck.js'></script>
 	</body>

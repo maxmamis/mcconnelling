@@ -17,6 +17,30 @@ ul {
 	margin: 0;
 }
 
+.timeline-clip {
+	width: 250px;
+	display: none;
+	margin: 0 15px;
+
+	&.active {
+		display: block;
+	}
+}
+
+#sortable { width: 100%; }
+
+#sortable > div { float: left; }
+
+.demo {
+	width: 100%;
+	margin: 0 auto;
+
+	img {
+		width: 250px;
+		margin: 0 15px;
+	}
+}
+
 
 //
 //
@@ -52,8 +76,16 @@ section {
 			padding-top: 6%;
 		}
 	}
+	&#player {
+		height: 0;
+		width: 0;
+
+		.audioplayer {
+			height: 0;
+			width: 0;
+		}
+	}
 	&#editor {
-		padding-top: 30px;
 		background: darken(@blue, 10%);
 		width: 100%;
 
@@ -62,6 +94,7 @@ section {
 		}
 
 		.timeline {
+			padding-top: 30px;
 			width: 100%;
 			background: darken(@blue, 20%);
 			height: 200px;
