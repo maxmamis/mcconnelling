@@ -1,4 +1,10 @@
 (function () {
+var MC = window.MC = (window.MC || {});
+var audioplayer = MC.audioplayer = {};
+
+// the Youtube player
+var ytPlayer;
+
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -7,27 +13,27 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
-var player;
 function onYouTubeIframeAPIReady() {
-	  player = new YT.Player('audioplayer', {
-		height: '1px',
-		width: '1px',
-		videoId: 'R1QRTHHlJ-I',
-		playerVars: {
-			autoplay: '0',
-			controls: '0',
-			modestbranding: '1',
-			showinfo: '0',
-			iv_load_policy: '3',
-			rel: '0'
-		}
-	  });
+    ytPlayer = new YT.Player('audioplayer', {
+        height: '1px',
+        width: '1px',
+        // videoId: 'R1QRTHHlJ-I',
+        playerVars: {
+            autoplay: '1',
+            controls: '0',
+            modestbranding: '1',
+            showinfo: '0',
+            iv_load_policy: '3',
+            rel: '0'
+        }
+    });
+    runReadyCallbacks()
 }
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
+  runReadyCallbacks();
   event.target.playVideo();
-
 }
 
 // 5. The API calls this function when the player's state changes.
@@ -41,10 +47,61 @@ function onPlayerStateChange(event) {
   }
 }
 function stopVideo() {
-  player.stopVideo();
+    ytPlayer.stopVideo();
 }
 
+// currentSeconds is the start time of the current video
+var currentURL, currentSeconds;
+audioplayer.loadWithUrlAndSeconds = function (url, seconds) {
+    var id;
+    var match = url.match(/v\=([\d\w]+)/);
+    if (match) {
+        id = match[1];
+    } else {
+        return;
+    }
+    ytPlayer.loadVideoById(id, seconds);
+    ytPlayer.pauseVideo();
+    currentURL = url;
+    currentSeconds = seconds;
+};
+
+audioplayer.play = function () {
+    ytPlayer.seekTo(currentSeconds);
+    ytPlayer.playVideo();
+}
+
+audioplayer.loopbackNow = function () {
+    ytPlayer.seekTo(currentSeconds);
+};
+
+audioplayer.ready = false;
+var readyCallbacks = []
+audioplayer.onReady = function (fn) {
+    readyCallbacks.push(fn);
+}
+
+function runReadyCallbacks () {
+    if (!ytPlayer.hasOwnProperty('loadVideoByUrl')) {
+        console.log('deferring');
+        return setTimeout(runReadyCallbacks, 200);
+    }
+    audioplayer.ready = true;
+    if (!readyCallbacks.length) {
+        return;
+    }
+    for (var i = 0; i < readyCallbacks.length; i++) {
+        if (readyCallbacks[i] && typeof readyCallbacks[i] === 'function') {
+            readyCallbacks[i]();
+        }
+    }
+}
+
+
+// export Youtube player events
 window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+window.onYoutubePlayerReady = onYoutubePlayerReady;
 window.onPlayerReady = onPlayerReady;
 window.onPlayerStateChange = onPlayerStateChange;
+
 }());
