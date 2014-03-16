@@ -15,10 +15,10 @@ player.play = function () {
 	nextVideo();
 };
 
-$(function () {
+player.init = function () {
 	$player = $('#player');
 	createVideoElements();
-});
+};
 
 function createVideoElements () {
 	var $video;

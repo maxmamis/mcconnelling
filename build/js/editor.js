@@ -1,5 +1,27 @@
 (function () {
 
+var MC = window.MC = (window.MC || {});
+var editor = MC.editor = {};
+
+editor.init = function () {
+    $("#sortable").sortable({
+        revert: true
+    });
+
+    $('#sortable').on( "sortstop", function( event, ui ) {
+        playNewSequence();
+    });
+
+    $('.gallery-clip').on('click', function () {
+        toggleTimelineClip($(this).data('clip'));
+        playNewSequence();
+    });
+};
+
+function toggleTimelineClip (clip) {
+    $('.timeline-clip[data-clip=' + clip + ']').toggleClass('active');
+}
+
 function getClipOrder() {
     var clips = [];
     $( ".timeline li.active" ).each(function() {
@@ -9,15 +31,9 @@ function getClipOrder() {
 }
 
 function playNewSequence() {
-    console.log( " ");
-    console.log("clips " , getClipOrder());
     MC.player.load( {
         clips: getClipOrder()
     });
 }
-
-$('#sortable').on( "sortstop", function( event, ui ) {
-    playNewSequence();
-});
 
 }());

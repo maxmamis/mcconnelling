@@ -10,6 +10,8 @@ function init () {
 	} else {
 		welcome();
 	}
+	MC.editor.init();
+	MC.player.init();
 }
 
 function getIdFromURL () {
@@ -31,7 +33,7 @@ function loadMcConnellFromID (id) {
 		if (err) {
 			return displayError();
 		}
-		console.log('mc: ', mcconnell);
+
 		MC.player.load(mcconnell);
 		MC.player.play();
 	});
