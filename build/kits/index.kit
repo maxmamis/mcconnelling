@@ -11,7 +11,7 @@
 
 		<title>Cover Template for Bootstrap</title>
 
-		<link href="/_/css/app.css" rel="stylesheet">
+		<link href="/_/css/app.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
 
 		<!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -26,18 +26,22 @@
 
 	<body>
 		<header>
-			<div class="inner">
+<!-- 			<div class="inner">
 				<h3 class="masthead-brand">mcconnelling.org</h3>
 				<ul class="nav masthead-nav">
 					<li class="active"><a href="#">Make</a></li>
 					<li><a href="#">Watch</a></li>
 					<li><a href="#">Share</a></li>
 				</ul>
-			</div>
+			</div> -->
+			<h1>#mcconnelling</h1>
 		</header>
 
-		<section id="player">
+		<div class="YT-TEST">
 			<div id="audioplayer"></div>
+		</div>
+
+		<section id="player">
 		</section>
 <!-- 		<section id="intro">
 			<div class="inner cover">
@@ -50,32 +54,24 @@
 			</div>
 		</section> -->
 
-		<section id="player">
-		</section>
 
 		<section id="editor">
-			<div class="clips"><img src="_/img/placeholder.jpg" alt=""><img src="_/img/placeholder.jpg" alt=""><img src="_/img/placeholder.jpg" alt=""><img src="_/img/placeholder.jpg" alt=""></div>
-			<input class="editor-title" value="" placeholder="Give your work of art a name">
-			<br>
-			<input class="editor-url" name="audio" id="a" value="" placeholder="Paste audio URL here (YouTube only)">
-			<input class="editor-time" name="audio_start" id="a_start" type="number" value="" placeholder="Start Seconds">
-
 			<div class="timeline">
 				<!-- <span class="instructions">Drag your #mcconnelling clips from below and remix!</span><br> -->
 				<div class="demo">
-				    <div id="sortable">
-				        <div id="draggable1" class="timeline-clip"><img src="_/img/placeholder.jpg" alt=""></div>
-				        <div id="draggable2" class="timeline-clip"><img src="_/img/placeholder.jpg" alt=""></div>
-				        <div id="draggable3" class="timeline-clip"><img src="_/img/placeholder.jpg" alt=""></div>
-				    </div>
+				    <ul id="sortable">
+				        <li class="timeline-clip 1" data-clip="1"><!-- <h1>1</h1> --><img src="_/img/1.jpg" alt=""></li>
+				        <li class="timeline-clip 2" data-clip="2"><!-- <h1>2</h1> --><img src="_/img/2.jpg" alt=""></li>
+				        <li class="timeline-clip 3" data-clip="3"><!-- <h1>3</h1> --><img src="_/img/3.jpg" alt=""></li>
+				    </ul>
 				</div>
 			</div>
 			<div class="inner">
 				<div class="clips">
 					<h2>Clips</h2>
-					<img id="clips-1" src="_/img/placeholder.jpg" alt="">
-					<img id="clips-2" src="_/img/placeholder.jpg" alt="">
-					<img id="clips-3" src="_/img/placeholder.jpg" alt="">
+					<img id="clips" class="1" src="_/img/1.jpg" alt="">
+					<img id="clips" class="2" src="_/img/2.jpg" alt="">
+					<img id="clips" class="3" src="_/img/3.jpg" alt="">
 				</div>
 				<input class="editor-title" value="" placeholder="Give your work of art a name">
 				<br>
@@ -116,5 +112,7 @@
 		<script src="/_/js/app.min.js"></script>
 		<script src="/_/js/player-ck.js"></script>
 		<script src='/_/js/mcconnelling-ck.js'></script>
+		<script src="/_/js/editor-ck.js"></script>
+		<script src="/_/js/youtube-audio-ck.js"></script>
 	</body>
 </html>

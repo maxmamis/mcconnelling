@@ -37,9 +37,23 @@ ul {
 	width: 250px;
 	display: none;
 	margin: 0 15px;
+	float: left;
+
+	h1 {
+		margin-bottom: -100px;
+		z-index: 500;
+		position: relative;
+		top: 7px;
+		left: 18px;
+		font-size: 72px;
+		text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+	}
 
 	&.active {
-		display: block;
+		display: inline-block;
+		&:hover {
+			cursor: move;
+		}
 	}
 }
 
@@ -57,7 +71,11 @@ ul {
 	}
 }
 
-
+.YT-TEST {
+	display: none;
+}
+//
+//
 //
 //
 //
@@ -76,8 +94,8 @@ body {
 header {
 	color: #fff;
 	background: @blue;
-	height: 80px;
-
+	height: 120px;
+	padding: 20px;
 	.nav {
 		text-transform: uppercase;
 	}
@@ -85,16 +103,18 @@ header {
 
 section {
 	&#player {
-		max-width: 75%;
+		background: lighten(#000, 10%);
+		width: 100%;
 		margin: 0 auto;
-		padding-top: 5%;
+		padding: 0;
+		margin-bottom: -5px;
 
 		video {
-			width: 100%;
+			width: 720px;
 			position: relative;
 		}
 	}
-	
+
 	&#intro {
 		position: relative;
 		height: 30%;
@@ -108,14 +128,10 @@ section {
 		background: darken(@blue, 10%);
 		width: 100%;
 
-		.inner {
-			border-top: 1px solid #fff;
-		}
-
 		.timeline {
 			padding-top: 30px;
 			width: 100%;
-			background: darken(@blue, 20%);
+			background: lighten(#000, 7%);
 			height: 200px;
 		}
 
@@ -130,7 +146,7 @@ section {
 		input {
 			font-size: 36px;
 			padding: 12px;
-			color: @red;
+			color: #fff;
 			background: lighten(@blue, 20%);
 			border: 0;
 
