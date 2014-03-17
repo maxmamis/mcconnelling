@@ -8,6 +8,9 @@ function init () {
 	MC.currentMcConnellId = getIdFromURL();
 	if (MC.currentMcConnellId) {
 		$('body').addClass('player_showing');
+		$('#solo-share').on('click', function () {
+			MC.showShareDialog();
+		});
 		loadMcConnellFromID(MC.currentMcConnellId);
 	} else {
 		welcome();
@@ -55,9 +58,16 @@ MC.showShareDialog = function () {
     var tw = twTemplate.replace('{$URL}', encodedUrl);
     var $fbshare = $(fb);
     var $twshare = $(tw);
+    $('.facebook').empty();
+    $('.twitter').empty();
     $('.facebook').append($fbshare);
     $('.twitter').append($twshare);
     $('#share').show();
+
+    $('#share #close, .backdrop').on('click', function () {
+    	$('#share').hide();
+    	$('#share #close, .backdrop').off('click');
+    });
 }
 
 

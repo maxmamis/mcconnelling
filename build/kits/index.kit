@@ -46,6 +46,7 @@
 		<section id='share'>
 			<div class='backdrop'></div>
 			<div class='share-popover'>
+				<div id='close'>x</div>
 				<h1>Share it with the world</h1>
 				<p>Copy and paste this link:</p>
 				<div class='link'>
@@ -67,7 +68,11 @@
 				</p>
 			</div>
 		</section>
-		<a href='/' id='solo-make' class='btn btn-lg btn-default start-editor'>Make Your Own</a>
+
+		<p class='lead solo'>
+			<a href='#' id='solo-share' class='btn btn-lg btn-default start-editor'>Share This</a>
+			<a href='/' id='solo-make' class='btn btn-lg btn-default start-editor'>Make Your Own</a>
+		</p>
 
 		<section id="editor">
 			<div class="timeline clearfix">
@@ -153,7 +158,9 @@
 						<input class="editor-url audio" name="audio" id="audio-url" value="" placeholder="Paste audio URL here (YouTube only)">
 						<input class="editor-time audio"  name="audio_start" id="audio-start" type="number" value="" placeholder="sec">
 						<br><br><br><br>
+						<button id='update'>Make it Happen</button>
 						<button id='save'>Share it with the World</button>
+
 					</div>
 				</div>
 		</section>

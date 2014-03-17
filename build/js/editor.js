@@ -23,8 +23,11 @@ editor.init = function () {
         }); 
     });
 
+    $('#update').on('click', function () {
+        playNewSequence();
+    }); 
+
     $('.audio').on('change', function () {
-        console.log('changed');
         playNewSequence();
     });
 };
