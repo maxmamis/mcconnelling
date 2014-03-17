@@ -1,13 +1,14 @@
 (function () {
 var MC = window.MC = (window.MC || {});
 var audioplayer = MC.audioplayer = {};
-
 // the Youtube player
 var ytPlayer;
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
+// tag.id = 'ytplayer';
 tag.src = "https://www.youtube.com/iframe_api";
+// tag.src = 'http://www.youtube.com/apiplayer?enablejsapi=1&version=3&playerapiid=ytplayer';
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 

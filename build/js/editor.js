@@ -31,7 +31,7 @@ function getClipOrder() {
 }
 
 function playNewSequence() {
-    MC.player.load( {
+    MC.player.load({
         clips: getClipOrder()
     });
 }

@@ -5,14 +5,30 @@ var player = window.MC.player = {};
 var $player, $videoElements = [], currentVideoElementIndex = 0,
 	currentMcconnell, currentVideoIndex;
 
+var audioplayer = MC.audioplayer;
+
 player.load = function (mcconnell) {
+	if (!audioplayer.ready) {
+		console.log('not ready yet');
+		return audioplayer.onReady(function () {
+			player.load(mcconnell)
+		});
+	}
+	console.log('ready now');
 	currentMcconnell = mcconnell;
 	currentVideoIndex = -1;
+	audioplayer.loadWithUrlAndSeconds(mcconnell.sound.url, mcconnell.sound.seconds);
 };
 
 player.play = function () {
+	if (!audioplayer.ready) {
+		return audioplayer.onReady(function () {
+			player.play()
+		});
+	}
 	setupNextVideo();
 	nextVideo();
+	audioplayer.play();
 };
 
 player.init = function () {
@@ -40,6 +56,11 @@ function setupNextVideo () {
 }
 
 function nextVideo () {
+	// we're looping from the beginnning, start the audio over
+	if (currentVideoIndex === 0) {
+		audioplayer.loopbackNow();
+	}
+
 	var $videoElement = $videoElements[currentVideoElementIndex];
 	$videoElement.hide();
 	$videoElement = switchPlayers();
