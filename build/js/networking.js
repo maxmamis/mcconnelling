@@ -14,8 +14,13 @@ networkManager.getMcConnell = function (id, callback) {
 
 networkManager.saveMcConnell = function (mcconnell, callback) {
 	var data = JSON.stringify(mcconnell);
-	$.post('/mcconnells', data, function (data) {
-		return callback(null, data);
+	$.ajax('/mcconnells', {
+		data: data,
+		type: 'POST',
+		contentType: 'application/json',
+		success: function (data) {
+			return callback(null, data[0]);
+		}
 	});
 };
 

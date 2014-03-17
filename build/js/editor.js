@@ -43,8 +43,9 @@ function serializeMcConnell () {
     var sound = getSound();
     return {
         clips: clips,
-        sound: sound
-    }
+        sound: sound,
+        name: $('#title').val()
+    };
 }
 
 function toggleTimelineClip (clip) {
