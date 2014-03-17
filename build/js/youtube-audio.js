@@ -55,7 +55,7 @@ function stopVideo() {
 var currentURL, currentSeconds;
 audioplayer.loadWithUrlAndSeconds = function (url, seconds) {
     var id;
-    var match = url.match(/v\=([\d\w]+)/);
+    var match = url.match(/v\=([\d\w\-]+)/);
     if (match) {
         console.log(match);
         id = match[1];
