@@ -15,6 +15,17 @@ textarea:focus, input:focus{
 body {
 	#player {
 		display: none;
+		height: 640px;
+	}
+
+	#solo-make {
+		position: relative;
+		top: -100px;
+		display: none;
+	}
+
+	#editor {
+		display: none;
 	}
 
 	&.player_showing {
@@ -22,8 +33,30 @@ body {
 			display: none;
 		}
 
+		#solo-make {
+			display: inline-block;
+		}
+
 		#player {
 			display: block;
+		}
+	}
+
+	&.editor_showing {
+		#intro {
+			display: none;
+		}
+
+		#solo-make {
+			display: none;
+		}
+
+		#editor {
+			display: block;
+		}
+
+		#solo-make {
+			display: none;
 		}
 	}
 }

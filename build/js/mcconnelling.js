@@ -28,7 +28,9 @@ function getIdFromURL () {
 }
 
 function welcome () {
-	$('body').removeClass('player_showing');
+	$('#get-started').on('click', function () {
+		$('body').addClass('player_showing').addClass('editor_showing');
+	});
 }
 
 function loadMcConnellFromID (id) {

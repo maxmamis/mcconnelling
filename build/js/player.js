@@ -9,12 +9,10 @@ var audioplayer = MC.audioplayer;
 
 player.load = function (mcconnell) {
 	if (!audioplayer.ready) {
-		console.log('not ready yet');
 		return audioplayer.onReady(function () {
 			player.load(mcconnell)
 		});
 	}
-	console.log('ready now');
 	currentMcconnell = mcconnell;
 	currentVideoIndex = -1;
 	audioplayer.loadWithUrlAndSeconds(mcconnell.sound.url, mcconnell.sound.start);
@@ -44,6 +42,7 @@ function createVideoElements () {
 		$video.on('ended', nextVideo);
 		$videoElements.push($video);
 	}
+	$videoElements[1].hide();
 }
 
 function setupNextVideo () {
