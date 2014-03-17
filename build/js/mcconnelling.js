@@ -44,12 +44,19 @@ function loadMcConnellFromID (id) {
 	});
 }
 
+var fbTemplate = '<a href="https://www.facebook.com/sharer/sharer.php?u={$URL}" target="_blank">Share on Facebook</a>';
+var twTemplate =  '<a href="https://twitter.com/share?url={$URL}" target="_blank">Share on Twitter</a>';
+
 MC.showShareDialog = function () {
 	var url = MC.getShareURL();
     $('#share-link').val(url);
-    // $('.fb-share-button').data('href', url);
-    $fbshare = $('<div class="fb-share-button" data-href="' + url + '" data-width="10000" data-type="button"></div>');
+    var encodedUrl = encodeURIComponent(url);
+    var fb = fbTemplate.replace('{$URL}', encodedUrl);
+    var tw = twTemplate.replace('{$URL}', encodedUrl);
+    var $fbshare = $(fb);
+    var $twshare = $(tw);
     $('.facebook').append($fbshare);
+    $('.twitter').append($twshare);
     $('#share').show();
 }
 
