@@ -13,6 +13,9 @@ textarea:focus, input:focus{
 }
 
 body {
+
+	-webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
 	#share {
 		display: none;
 		position: fixed;
@@ -167,14 +170,14 @@ header {
 	//color: #000;
 	color: #fff;
 	// background: #fff;
-	height: 80px;
+	height: 20px;
 	padding: 20px;
 	border-top: 5px solid @red;
 	//border-bottom: 1px solid #cccccc;
 
 	h1 {
-		background: url("../img/gop.jpg") no-repeat;
-		background-size: 50px;
+		// background: url("../img/gop.jpg") no-repeat;
+		// background-size: 50px;
 		width: 500px;
 		margin-left: 25px;
 		margin-top: -10px;
@@ -200,7 +203,7 @@ section {
 			background: #000;
 			height: 405px;
 			position: relative;
-			margin: 60px;
+			margin: 30px;
 			-webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 1);
 			-moz-box-shadow:    0px 0px 15px 0px rgba(0, 0, 0, 1);
 			box-shadow:         0px 0px 15px 0px rgba(0, 0, 0, 1);
@@ -235,15 +238,14 @@ section {
 	&#editor {
 		background: #eee;
 		background: darken(@blue, 10%);
+		background: #ccc;
 		width: 100%;
-		color: #fff;
+		color: @red;
 
 		.timeline {
 			padding-top: 10px;
 			width: 100%;
-			background: lighten(#000, 7%);
-			height: 160px;
-			background: darken(@blue, 10%);
+			height: 140px;
 			background: #000;
 			overflow-x: scroll;
 			overflow-y: hidden;
@@ -252,10 +254,21 @@ section {
 			// border-bottom: 1px solid #5c5c5c;
 			text-align: left;
 
+			span.instructions {
+				display: block;
+				position: relative;
+				top: 0;
+				margin-top: 30px;
+				margin-bottom: -64px;
+				text-align: center;
+				color: #333;
+				font-size: 32px;
+			}
+
 			.timeline-clip {
 				display: inline-block;
 				width: 0;
-				margin: 0;
+				margin: -2px;
 				// float: left;
 				white-space: nowrap;
 				transition: width 0.3s;
@@ -275,7 +288,7 @@ section {
 					//margin: -50px 15px;
 					margin: 0 5px;
 					display: inline-block;
-					width: 250px;
+					width: 210px;
 
 					&:hover {
 						cursor: move;
@@ -284,7 +297,7 @@ section {
 					span.close{
 						display: block;
 						position: relative;
-						top: -135px;
+						top: -115px;
 						right: 10px;
 						color: #fff;
 						opacity: 1;
@@ -294,7 +307,7 @@ section {
 				}
 
 				img {
-					width: 250px;
+					width: 210px;
 					margin: 0;
 					// border: 1px solid #333;
 					border-right: 1px solid #000;
@@ -307,22 +320,42 @@ section {
 				}
 			}
 		}
+		div.inner {
+			max-width: 1000px;
+		}
 
 		.clips {
-			background: lighten(@blue, 10%);
 			padding: 30px;
 			margin: 15px 0;
 			&:hover {
 				cursor: pointer;
 			}
+			.inner {
+				background: @red;
+				color: #fff;
+				padding: 15px;
+				max-width: 1000px;
+			}
 			h2 {
 				padding: 0;
-				margin: 0 0 30px;
+				margin: 0 0px;
 			}
 			img {
 				width: 12%;
 				margin: 1px -1px;
 				padding: 0;
+				@media screen and (max-width: 1200px) {
+					width: 18%;
+				}
+				@media screen and (max-width: 1000px) {
+					width: 20%;
+				}
+				@media screen and (max-width: 800px) {
+					width: 22%;
+				}
+				@media screen and (max-width: 600px) {
+					width: 24%;
+				}
 			}
 		}
 

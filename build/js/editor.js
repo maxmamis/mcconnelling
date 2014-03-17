@@ -13,6 +13,7 @@ editor.init = function () {
     });
 
     $('.gallery-clip').on('click', function () {
+        $('.instructions').remove();
         toggleTimelineClip($(this).data('clip'));
         playNewSequence();
     });
@@ -31,6 +32,7 @@ editor.init = function () {
 
     $('#update').on('click', function () {
         playNewSequence();
+        window.scrollTo(0, 0);
     });
 
     $('.audio').on('change', function () {
