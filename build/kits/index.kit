@@ -65,9 +65,9 @@
 				        <li class="timeline-clip 1" data-clip="1"><img src="_/img/1.jpg" alt=""></li>
 				        <li class="timeline-clip 2" data-clip="2"><img src="_/img/2.jpg" alt=""></li>
 				        <li class="timeline-clip 3" data-clip="3"><img src="_/img/3.jpg" alt=""></li>
-				        <li class="timeline-clip 4" data-clip="1"><img src="_/img/4.jpg" alt=""></li>
-				        <li class="timeline-clip 8" data-clip="2"><img src="_/img/8.jpg" alt=""></li>
-				        <li class="timeline-clip 12" data-clip="3"><img src="_/img/12.jpg" alt=""></li>
+				        <li class="timeline-clip 4" data-clip="4"><img src="_/img/4.jpg" alt=""></li>
+				        <li class="timeline-clip 8" data-clip="8"><img src="_/img/8.jpg" alt=""></li>
+				        <li class="timeline-clip 12" data-clip="12"><img src="_/img/12.jpg" alt=""></li>
 				    </ul>
 				</div>
 			</div>
@@ -75,18 +75,20 @@
 				<div class="clips">
 					<h2>Click on clips to add to timeline.</h2>
 					<h2>Drag & drop to rerrange.</h2>
-					<img id="clips" class="1" src="_/img/1.jpg" alt="">
-					<img id="clips" class="2" src="_/img/2.jpg" alt="">
-					<img id="clips" class="3" src="_/img/3.jpg" alt="">
-					<img id="clips" class="4" src="_/img/4.jpg" alt="">
-					<img id="clips" class="8" src="_/img/8.jpg" alt="">
-					<img id="clips" class="12" src="_/img/12.jpg" alt="">
+					<img class='gallery-clip' data-clip='1' class="1" src="_/img/1.jpg" alt="">
+					<img class='gallery-clip' data-clip='2' class="2" src="_/img/2.jpg" alt="">
+					<img class='gallery-clip' data-clip='3' class="3" src="_/img/3.jpg" alt="">
+					<img class='gallery-clip' data-clip='4' class="4" src="_/img/4.jpg" alt="">
+					<img class='gallery-clip' data-clip='8' class="8" src="_/img/8.jpg" alt="">
+					<img class='gallery-clip' data-clip='12' class="12" src="_/img/12.jpg" alt="">
 				</div>
-				<input class="editor-title" id="title" value="" placeholder="Give your work of art a name">
-				<br>
-				<input class="editor-url audio" name="audio" id="audio-url" value="" placeholder="Paste audio URL here (YouTube only)">
-				<input class="editor-time audio"  name="audio_start" id="audio-start" type="number" value="" placeholder="sec">
-				<button id='save'>Save Your Creation</button>
+				<div id='audio'>
+					<input class="editor-title" id="title" value="" placeholder="Give your work of art a name">
+					<br>
+					<input class="editor-url audio" name="audio" id="audio-url" value="" placeholder="Paste audio URL here (YouTube only)">
+					<input class="editor-time audio"  name="audio_start" id="audio-start" type="number" value="" placeholder="sec">
+				</div>
+				<button id='save'>Share it with the World</button>
 			</div>
 		</section>
 

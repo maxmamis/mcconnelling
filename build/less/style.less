@@ -204,7 +204,7 @@ section {
 			}
 		}
 
-		input {
+		input, button {
 			font-size: 36px;
 			padding: 12px;
 			color: #fff;
@@ -227,18 +227,32 @@ section {
 			   color: #fff;
 			}
 		}
-		.editor-title {
-			width: 1000px;
-			margin: 15px auto 5px;
-		}
-		.editor-url {
-			margin-left: -5px;
-			width: 850px;
-		}
-		.editor-time {
-			width: 145px;
-		}
+		#audio {
+			max-width: 1000px;
+			position: relative;
+			height: auto;
+			min-height: 175px;
+			.editor-title {
+				width: 100%;
+				margin: 15px auto 5px;
+			}
+			.editor-url {
+				width: 84.5%;
+				position: absolute;
+				left: 0;
+			}
+			.editor-time {
+				position: absolute;
+				right: 0;
+				width: 15%;
+			}
 
+		}
+		#save {
+			width: 100%;
+			height: 40px;
+			position: relative;
+		}
 	}
 	&#gallery {
 		text-align: left;
@@ -301,5 +315,24 @@ footer {
 @media screen and (max-width: 900px) {
 	section#player {
 		max-width: 100%;
+	}
+	section#editor {
+		input, button {
+			font-size: 28px;
+		}
+		#audio {
+			min-height: 155px;
+		}
+	}
+}
+
+@media screen and (max-width: 710px) {
+	section#editor {
+		#audio {
+			min-height: 122px;
+		}
+		input, button {
+			font-size: 18px;
+		}
 	}
 }

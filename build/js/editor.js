@@ -23,7 +23,6 @@ editor.init = function () {
         }); 
     });
 
-    console.log($('.audio'));
     $('.audio').on('change', function () {
         console.log('changed');
         playNewSequence();
