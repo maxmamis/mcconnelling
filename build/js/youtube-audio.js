@@ -100,7 +100,6 @@ function runReadyCallbacks () {
 
 // export Youtube player events
 window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
-window.onYoutubePlayerReady = onYoutubePlayerReady;
 window.onPlayerReady = onPlayerReady;
 window.onPlayerStateChange = onPlayerStateChange;
 
