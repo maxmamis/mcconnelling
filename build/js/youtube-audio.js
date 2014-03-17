@@ -57,23 +57,24 @@ audioplayer.loadWithUrlAndSeconds = function (url, seconds) {
     var id;
     var match = url.match(/v\=([\d\w]+)/);
     if (match) {
+        console.log(match);
         id = match[1];
     } else {
         return;
     }
-    ytPlayer.loadVideoById(id, seconds);
+    ytPlayer.loadVideoById(id, +seconds);
     ytPlayer.pauseVideo();
     currentURL = url;
     currentSeconds = seconds;
 };
 
 audioplayer.play = function () {
-    ytPlayer.seekTo(currentSeconds);
+    ytPlayer.seekTo(+currentSeconds);
     ytPlayer.playVideo();
 }
 
 audioplayer.loopbackNow = function () {
-    ytPlayer.seekTo(currentSeconds);
+    ytPlayer.seekTo(+currentSeconds);
 };
 
 audioplayer.ready = false;

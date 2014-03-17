@@ -17,7 +17,7 @@ player.load = function (mcconnell) {
 	console.log('ready now');
 	currentMcconnell = mcconnell;
 	currentVideoIndex = -1;
-	audioplayer.loadWithUrlAndSeconds(mcconnell.sound.url, mcconnell.sound.seconds);
+	audioplayer.loadWithUrlAndSeconds(mcconnell.sound.url, mcconnell.sound.start);
 };
 
 player.play = function () {

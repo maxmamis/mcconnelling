@@ -2,14 +2,17 @@
 var MC = window.MC;
 $(init);
 
+MC.currentMcConnellId = null;
+
 function init () {
-	var currentID = getIdFromURL();
-	if (currentID) {
+	MC.currentMcConnellId = getIdFromURL();
+	if (MC.currentMcConnellId) {
 		$('body').addClass('player_showing');
-		loadMcConnellFromID(currentID);
+		loadMcConnellFromID(MC.currentMcConnellId);
 	} else {
 		welcome();
 	}
+
 	MC.editor.init();
 	MC.player.init();
 }
@@ -25,7 +28,7 @@ function getIdFromURL () {
 }
 
 function welcome () {
-	// initialize the welcome screen
+	$('body').removeClass('player_showing');
 }
 
 function loadMcConnellFromID (id) {
@@ -38,6 +41,10 @@ function loadMcConnellFromID (id) {
 		MC.player.play();
 	});
 }
+
+MC.getShareURL = function () {
+	return 'http://www.mcconnelling.org?_id=' + MC.currentMcConnellId;
+};
 
 function displayError() {}
 
