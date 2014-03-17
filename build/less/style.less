@@ -13,6 +13,43 @@ textarea:focus, input:focus{
 }
 
 body {
+	#share {
+		display: none;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		z-index: 1000;
+		top: 0;
+		left: 0;
+
+		.backdrop {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			background: rgba(0,0,0,.3);
+		}
+
+		.share-popover {
+			position: relative;
+			z-index: 10;
+			width: 60%;
+			height: auto;
+			background: white;
+			margin: 0 auto;
+			top: 15%;
+			color: black;
+			padding: 30px;
+
+			h1 {
+				text-transform: uppercase;
+			}
+			input {
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
 	#player {
 		display: none;
 		height: 640px;

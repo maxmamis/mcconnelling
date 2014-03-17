@@ -18,8 +18,8 @@ editor.init = function () {
     });
 
     $('#save').on('click', function () {
-        editor.save(function () {
-            alert(MC.getShareURL());
+        editor.save(function (url) {
+            MC.showShareDialog();
         }); 
     });
 
@@ -31,9 +31,8 @@ editor.init = function () {
 
 editor.save = function (callback) {
     MC.networkManager.saveMcConnell(serializeMcConnell(), function (err, data) {
-        console.log(data);
         MC.currentMcConnellId = data._id;
-        callback();
+        callback(data._id);
     });
 };
 

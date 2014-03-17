@@ -78,7 +78,7 @@ audioplayer.loopbackNow = function () {
 };
 
 audioplayer.ready = false;
-var readyCallbacks = []
+var readyCallbacks = [];
 audioplayer.onReady = function (fn) {
     readyCallbacks.push(fn);
 }
