@@ -28,7 +28,7 @@ function getIdFromURL () {
 }
 
 function welcome () {
-	$('body').removeClass('player_showing');
+	// $('body').removeClass('player_showing');
 }
 
 function loadMcConnellFromID (id) {

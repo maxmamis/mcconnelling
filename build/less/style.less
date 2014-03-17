@@ -79,7 +79,7 @@ header {
 	//color: #000;
 	color: #fff;
 	// background: #fff;
-	height: 120px;
+	height: 80px;
 	padding: 20px;
 	border-top: 5px solid @red;
 	//border-bottom: 1px solid #cccccc;
@@ -91,6 +91,7 @@ header {
 		margin-left: 25px;
 		margin-top: -10px;
 		font-weight: 400;
+		font-size: 32px;
 	}
 
 	.nav {
@@ -108,6 +109,8 @@ section {
 
 		video {
 			width: 720px;
+			background: #000;
+			height: 405px;
 			position: relative;
 			margin: 60px;
 			-webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 1);
@@ -148,20 +151,25 @@ section {
 		color: #fff;
 
 		.timeline {
-			padding-top: 0px;
+			padding-top: 60px;
 			width: 100%;
 			background: lighten(#000, 7%);
 			height: 140px;
 			background: darken(@blue, 10%);
 			background: #000;
+			overflow-x: scroll;
+			overflow-y: hidden;
+			white-space: nowrap;
 			// border-top: 1px solid #5c5c5c;
 			// border-bottom: 1px solid #5c5c5c;
+			text-align: left;
 
 			.timeline-clip {
-				width: 250px;
+				width: 180px;
 				display: none;
-				margin: 0px;
-				float: left;
+				margin: -50px 15px;
+				// float: left;
+				white-space: nowrap;
 
 				h1 {
 					margin-bottom: -100px;
@@ -181,6 +189,7 @@ section {
 				}
 
 				img {
+					width: 100%;
 					margin: 0;
 					// border: 1px solid #333;
 					border-right: 1px solid #000;
@@ -198,7 +207,7 @@ section {
 				margin: 0 0 30px;
 			}
 			img {
-				width: 20%;
+				width: 12%;
 				margin: 0;
 				padding: 0;
 			}
@@ -250,7 +259,7 @@ section {
 		}
 		#save {
 			width: 100%;
-			height: 40px;
+			// height: 40px;
 			position: relative;
 		}
 	}
