@@ -17,10 +17,16 @@ editor.init = function () {
         playNewSequence();
     });
 
+    $('.timeline-clip .close').on('click', function () {
+        console.log("closed");
+        $(this).parent().toggleClass('active');
+        playNewSequence();
+    });
+
     $('#save').on('click', function () {
         editor.save(function () {
             alert(MC.getShareURL());
-        }); 
+        });
     });
 
     $('.audio').on('change', function () {
