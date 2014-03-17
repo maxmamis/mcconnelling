@@ -44,6 +44,17 @@ function loadMcConnellFromID (id) {
 	});
 }
 
+MC.showShareDialog = function () {
+	var url = MC.getShareURL();
+    $('#share-link').val(url);
+    // $('.fb-share-button').data('href', url);
+    $fbshare = $('<div class="fb-share-button" data-href="' + url + '" data-width="10000" data-type="button"></div>');
+    $('.facebook').append($fbshare);
+    $('#share').show();
+}
+
+
+
 MC.getShareURL = function () {
 	return 'http://www.mcconnelling.org?_id=' + MC.currentMcConnellId;
 };
