@@ -1,10 +1,13 @@
 var express = require('express'),
     config  = require('./config'),
     db      = require('./db'),
+    fs      = require('fs'),
     _       = require('underscore');
 
 var app = express();
 app.use(express.static(__dirname + '/../app'));
+var oneWeek = 604800000;
+app.use('/videos', express.static(__dirname + '/../app/_/vid', {maxAge: oneWeek}));
 app.use(express.json());
 
 function findMcconnell (id, callback) {
@@ -76,6 +79,19 @@ app.post('/mcconnells', function (req, res) {
         }
 
         res.send(doc);
+    });
+});
+
+app.get('/cache.manifest', function (req, res) {
+    res.header('Content-Type', 'text/cache-manifest');
+    var cache = ['CACHE MANIFEST'];
+
+    fs.readdir('../app/_/vid', function (err, dir) {
+        for (var i = 0; i < dir.length; i++) {
+            cache.push('/videos/' + dir[i]);
+            // console.log('/videos/' + dir[i]);
+        }
+        res.send(cache.join('\n'));
     });
 });
 
