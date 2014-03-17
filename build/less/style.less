@@ -1,6 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 @blue: rgba(40, 55, 140, 1);
+@blue: rgba(80, 140, 180, 1);
+@blue2: rgba(40, 55, 140, 1);
 @red: rgba(180, 40, 40, 1);
 
 .inner {
@@ -170,19 +172,68 @@ header {
 	//color: #000;
 	color: #fff;
 	// background: #fff;
-	height: 20px;
-	padding: 20px;
-	border-top: 5px solid @red;
+	background: #342e30;
+	height: 60px;
+	padding: 5px;
+	// border-top: 5px solid @red;
+	text-align: left;
 	//border-bottom: 1px solid #cccccc;
+	position: fixed;
+	width: 100%;
+	z-index: 10000;
 
 	h1 {
 		// background: url("../img/gop.jpg") no-repeat;
 		// background-size: 50px;
-		width: 500px;
-		margin-left: 25px;
-		margin-top: -10px;
-		font-weight: 400;
+		width: 280px;
+		margin-left: -10px;
+		margin-top: -5px;
+		margin-bottom: -50px;
+		font-weight: 700;
 		font-size: 32px;
+		background: @red;
+		padding: 20px;
+		display: block;
+		height: 80px;
+		float: left;
+	}
+
+	span.subtitle {
+		display: block;
+		float: left;
+		text-transform: uppercase;
+		font-size: 16px;
+		font-weight: 700;
+		padding: 15px 10px;
+	}
+
+	ul {
+		display: block;
+		float: right;
+		padding-right: 10px;
+		li.social {
+			display: inline-block;
+			padding: 10px 20px;
+			color: #fff;
+			width: 60px;
+			border-left: 1px solid lighten(#342e30, 20%);
+			height: 60px;
+			margin-top: -5px;
+			a {
+				color: #fff;
+				font-size: 24px;
+				font-weight: 900;
+			}
+		}
+	}
+
+	.blueblock {
+		height: 70px;
+		background: @blue;
+		width: 70px;
+		display: block;
+		float: right;
+		margin: -5px;
 	}
 
 	.nav {
@@ -235,10 +286,27 @@ section {
 		}
 	}
 
+	&#video-share {
+		h1.title {
+			width: 100%;
+			padding: 0;
+			margin: 0 0px;
+			color: #fff;
+			text-transform: uppercase;
+			text-align: left;
+			font-size: 24px;
+			font-weight: 700;
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 5px;
+
+		}
+	}
+
 	&#editor {
 		background: #eee;
 		background: darken(@blue, 10%);
 		background: #ccc;
+		background: #fff;
 		width: 100%;
 		color: @red;
 
@@ -321,24 +389,32 @@ section {
 			}
 		}
 		div.inner {
-			max-width: 1000px;
+			max-width: 1200px;
 		}
 
 		.clips {
 			padding: 30px;
-			margin: 15px 0;
+			margin: 0 auto;
+			max-width: 1200px;
 			&:hover {
 				cursor: pointer;
 			}
 			.inner {
-				background: @red;
 				color: #fff;
-				padding: 15px;
-				max-width: 1000px;
+				padding: 15px 0 5px;
+				margin-bottom: 10px;
+				max-width: 1200px;
 			}
 			h2 {
 				padding: 0;
 				margin: 0 0px;
+				color: #04233d;
+				text-transform: uppercase;
+				text-align: left;
+				font-size: 24px;
+				font-weight: 700;
+				border-bottom: 2px solid @red;
+				padding-bottom: 5px;
 			}
 			img {
 				width: 12%;
@@ -363,7 +439,7 @@ section {
 			font-size: 36px;
 			padding: 12px;
 			color: #fff;
-			background: lighten(@blue, 20%);
+			background: @blue2;
 			border: 0;
 
 			&::-webkit-input-placeholder {
@@ -384,10 +460,10 @@ section {
 		}
 
 		button#update {
-			border: 5px solid lighten(@blue, 25%);
+			border: 5px solid @blue2;
 
 			&:hover {
-				background: lighten(@blue, 25%);
+				background: @blue2;
 				// border: 5px solid lighten(@blue, 40%);
 			}
 		}
@@ -401,8 +477,22 @@ section {
 				// border: 5px solid darken(@red, 20%);
 			}
 		}
+		.settings {
+			h2 {
+				padding: 0;
+				margin: 0 0px;
+				color: #04233d;
+				text-transform: uppercase;
+				text-align: left;
+				font-size: 24px;
+				font-weight: 700;
+
+				border-bottom: 2px solid @red;
+				padding-bottom: 5px;
+			}
+		}
 		#audio {
-			max-width: 1000px;
+			max-width: 1200px;
 			position: relative;
 			height: auto;
 			min-height: 175px;
