@@ -32,7 +32,12 @@ function getIdFromURL () {
 
 function welcome () {
 	$('#get-started').on('click', function () {
-		$('body').addClass('player_showing').addClass('editor_showing');
+		$('#intro').fadeOut("slow", function() {
+			$('#player').fadeIn("slow");
+			$('#editor').fadeIn("slow");
+			// $('body').addClass('player_showing').addClass('editor_showing');
+
+		});
 	});
 }
 
