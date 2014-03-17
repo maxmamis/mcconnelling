@@ -1,3 +1,5 @@
+var config = require('./config');
+console.log(config.imgPath);
 module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-jade');
@@ -51,19 +53,50 @@ module.exports = function (grunt) {
             dev: {
                 files: ['<%= less.files %>'],
                 options: {
-                    compress: false
+                    compress: false,
+                    modifyVars: {
+                        imgPath: config.imgPath
+                    }
                 }
             },
             
             deploy: {
                 files: ['<%= less.files %>'],
                 options: {
-                    yuicompress: true
+                    yuicompress: true,
+                    modifyVars: {
+                        imgPath: config.imgPath
+                    }
                 }
             }
 
         },
-        
+
+        jade: {
+            files: {
+                'www/index.html': 'build/kits/index.jade',
+            },
+            dev: {
+                files: ['<%= jade.files %>'],
+                options: {
+                    pretty: true,
+                    data: {
+                        dev: true,
+                        test: 'abc'
+                    }
+                }
+            },
+            
+            deploy: {
+                files: ['<%= jade.files %>'],
+                options: {
+                    pretty: false,
+                    data: {
+                        dev: false
+                    }
+                }
+            }
+        },
         uglify: {
             files: {expand: true, flatten: true, src: ['build/js/**/*.js'], dest: 'www/_/js', filter: 'isFile'},
             
@@ -128,7 +161,7 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('build:dev', ['less:dev', 'jade:dev', 'copy:dev', 'rename:dev']);
+    grunt.registerTask('build:dev', ['less:dev', 'copy:dev', 'rename:dev']);
     grunt.registerTask('build:deploy', ['less:deploy', 'copy:deploy', 'uglify:deploy']);//'rename:deploy']);
     grunt.registerTask('deploy', ['build:deploy']);
     grunt.registerTask('develop', ['build:dev', 'concurrent']);

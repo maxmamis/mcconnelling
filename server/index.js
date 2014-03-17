@@ -1,13 +1,11 @@
 var express = require('express'),
-    config  = require('./config'),
+    config  = require('../config'),
     db      = require('./db'),
     fs      = require('fs'),
     _       = require('underscore');
 
 var app = express();
-app.use(express.static(__dirname + '/../app'));
-var oneWeek = 604800000;
-app.use('/videos', express.static(__dirname + '/../app/_/vid', {maxAge: oneWeek}));
+app.use(express.static(__dirname + '/../www'));
 app.use(express.json());
 
 function findMcconnell (id, callback) {

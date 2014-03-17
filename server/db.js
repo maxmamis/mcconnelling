@@ -1,5 +1,5 @@
 var mongo = require('mongodb'),
-	config = require('./config');
+	config = require('../config');
 
 var db;
 
