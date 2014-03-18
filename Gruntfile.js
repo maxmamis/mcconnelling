@@ -12,22 +12,22 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-concurrent');
 
-    
+
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        
+
         loadFiles: {
             source: 'src',
             target: 'target'
         },
-        
+
         watch: {
             copy: {
                 files: ['build/js/**/*.js'],
                 tasks: ['copy:dev']
             },
-            
+
             styles: {
                 files: ['build/less/style.less'],
                 tasks: ['less:dev'],
@@ -35,7 +35,7 @@ module.exports = function (grunt) {
                 //     livereload: true
                 // }
             },
-            
+
             markup: {
                 files: ['build/kits/**/*.kit'],
                 tasks: ['copy:dev'],
@@ -44,12 +44,12 @@ module.exports = function (grunt) {
                 // }
             }
         },
-        
+
         less: {
             files: {
                 'www/_/css/app.css': 'build/less/app.less'
             },
-            
+
             dev: {
                 files: ['<%= less.files %>'],
                 options: {
@@ -59,7 +59,7 @@ module.exports = function (grunt) {
                     }
                 }
             },
-            
+
             deploy: {
                 files: ['<%= less.files %>'],
                 options: {
@@ -71,10 +71,10 @@ module.exports = function (grunt) {
             }
 
         },
-        
+
         uglify: {
             files: {expand: true, flatten: true, src: ['build/js/**/*.js'], dest: 'www/_/js', filter: 'isFile'},
-            
+
             deploy: {
                  files: ['<%= uglify.files %>'],
                  options: {
@@ -90,7 +90,7 @@ module.exports = function (grunt) {
                     {src: ['build/kits/index.kit'], dest: 'www/index.html'}
                 ]
             },
-      
+
             deploy: {
                 files: [
                     '<%= uglify.files %>',
@@ -112,14 +112,14 @@ module.exports = function (grunt) {
                 // ]
             }
         },
-        
+
         // concat: {
         //     deploy: {
         //         src: ['target/scripts/matchMedia.js', 'target/scripts/breakpoints.js', 'target/scripts/instagram.js', 'target/scripts/jquery_plugins.js', 'target/scripts/prolific.js'],
         //         dest: 'target/scripts/prolific.min.js'
         //     }
         // },
-        
+
         connect: {
             server: {
                 options: {
@@ -130,7 +130,7 @@ module.exports = function (grunt) {
                 }
             }
         },
-        
+
         concurrent: {
             develop: ['watch', 'connect']
         }

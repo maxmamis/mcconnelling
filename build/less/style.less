@@ -294,7 +294,10 @@ section {
 	}
 
 	&#video-share {
-		h1.title {
+		background: #333;
+		overflow: auto;
+		display: none;
+		h1 {
 			width: 100%;
 			padding: 0;
 			margin: 0 0px;
@@ -305,7 +308,53 @@ section {
 			font-weight: 700;
 			border-bottom: 1px solid #ccc;
 			padding-bottom: 5px;
+		}
+		.copypaste {
+			display: none;
+		}
+		.link {
+			display: none;
+		}
+		button#save {
+			background: @red;
+			width: 100%;
+			float: left;
+			border: 5px solid darken(@red, 10%);
+			font-size: 24px;
+			padding: 8px;
+			color: #fff;
+			border: 0;
+			margin-top: 10px;
+			margin-bottom: 15px;
 
+			&:hover {
+				background: lighten(@red, 10%);
+				// border: 5px solid darken(@red, 20%);
+			}
+		}
+		#share-link {
+			margin-top: 10px;
+			color: #000;
+			width: 100%;
+			padding: 8px;
+		}
+
+		.facebook, .twitter {
+			margin-top: 15px;
+			display: block;
+			display: none;
+			width: 50%;
+			color: #fff;
+			background: @blue;
+			border: 5px solid #333;
+			float: left;
+			font-size: 24px;
+			padding: 8px;
+			margin-bottom: 15px;
+
+			a {
+				color: #fff;
+			}
 		}
 	}
 
@@ -475,15 +524,6 @@ section {
 			}
 		}
 
-		button#save {
-			background: @red;
-			border: 5px solid darken(@red, 10%);
-
-			&:hover {
-				background: lighten(@red, 10%);
-				// border: 5px solid darken(@red, 20%);
-			}
-		}
 		.settings {
 			h2 {
 				padding: 0;

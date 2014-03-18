@@ -32,6 +32,7 @@ editor.init = function () {
 
     $('#update').on('click', function () {
         playNewSequence();
+        $('#video-share').show();
         window.scrollTo(0, 0);
     });
 
