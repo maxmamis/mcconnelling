@@ -216,7 +216,7 @@ header {
 			display: inline-block;
 			padding: 10px 20px;
 			color: #fff;
-			width: 60px;
+			// width: 60px;
 			border-left: 1px solid lighten(#342e30, 20%);
 			height: 60px;
 			margin-top: -5px;
@@ -235,6 +235,12 @@ header {
 		display: block;
 		float: right;
 		margin: -5px;
+
+		img {
+			width: 60%;
+			margin-top: 15px;
+			margin-left: 15px;
+		}
 	}
 
 	.nav {
@@ -255,7 +261,7 @@ section {
 			background: #000;
 			height: 405px;
 			position: relative;
-			margin: 30px;
+			margin: 100px 30px 30px;
 			-webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 1);
 			-moz-box-shadow:    0px 0px 15px 0px rgba(0, 0, 0, 1);
 			box-shadow:         0px 0px 15px 0px rgba(0, 0, 0, 1);
@@ -567,6 +573,25 @@ section {
 
 				margin: 5px 0;
 			}
+		}
+	}
+	&#credits {
+		padding-bottom: 60px;
+		h2 {
+			font-family: Georgia;
+			font-style: italic;
+			font-size: 36px;
+			margin-bottom: 30px;
+		}
+		a.awesome {
+			color: #fff;
+			font-weight: 900;
+			font-size: 56px;
+			padding: 15px;
+			margin-left: 15px;
+			width: 40%;
+			display: inline-block;
+			border: 1px solid #444;
 		}
 	}
 }

@@ -63,10 +63,10 @@ MC.showShareDialog = function () {
     var tw = twTemplate.replace('{$URL}', encodedUrl);
     var $fbshare = $(fb);
     var $twshare = $(tw);
-    $('.facebook').empty();
-    $('.twitter').empty();
-    $('.facebook').append($fbshare);
-    $('.twitter').append($twshare);
+    $('#video-share .facebook').empty();
+    $('#video-share .twitter').empty();
+    $('#video-share .facebook').append($fbshare);
+    $('#video-share .twitter').append($twshare);
     $('#share').show();
 
     $('#share #close, .backdrop').on('click', function () {
