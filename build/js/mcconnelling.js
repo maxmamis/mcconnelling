@@ -83,7 +83,7 @@ MC.showShareDialog = function () {
 
 
 MC.getShareURL = function () {
-	return 'http://www.mcconnelling.org?_id=' + MC.currentMcConnellId;
+	return 'http://www.mcconnelling.org/view?_id=' + MC.currentMcConnellId;
 };
 
 function displayError() {}
