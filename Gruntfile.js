@@ -29,11 +29,11 @@ module.exports = function (grunt) {
             },
             
             styles: {
-                files: ['build/less/app.less'],
+                files: ['build/less/style.less'],
                 tasks: ['less:dev'],
-                options: {
-                    livereload: true
-                }
+                // options: {
+                //     livereload: true
+                // }
             },
             
             markup: {
