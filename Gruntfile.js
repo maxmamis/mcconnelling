@@ -38,7 +38,7 @@ module.exports = function (grunt) {
             
             markup: {
                 files: ['build/kit/**/*.kit'],
-                tasks: ['rename:dev'],
+                tasks: ['copy:dev'],
                 options: {
                     livereload: true
                 }
