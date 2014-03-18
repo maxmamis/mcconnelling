@@ -5,6 +5,15 @@ $(init);
 MC.currentMcConnellId = null;
 
 function init () {
+
+	var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+
+	if(!is_chrome)
+	{
+	$('body').addClass('not-chrome');
+	return;
+	}
+
 	MC.currentMcConnellId = getIdFromURL();
 	if (MC.currentMcConnellId) {
 		$('body').addClass('player_showing');
