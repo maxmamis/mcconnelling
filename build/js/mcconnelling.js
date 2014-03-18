@@ -63,6 +63,11 @@ MC.showShareDialog = function () {
     var tw = twTemplate.replace('{$URL}', encodedUrl);
     var $fbshare = $(fb);
     var $twshare = $(tw);
+    $('#save').show();
+    $('.copypaste').show();
+    $('#video-share .facebook').show();
+    $('#video-share .twitter').show();
+    $('#video-share .link').show();
     $('#video-share .facebook').empty();
     $('#video-share .twitter').empty();
     $('#video-share .facebook').append($fbshare);
