@@ -51,7 +51,7 @@ function setupNextVideo () {
 		currentVideoIndex = 0;
 	}
 	var	videoElement = getNextVideoElement()[0];
-	videoElement.src = '/videos/' + currentMcconnell.clips[currentVideoIndex] + '.mov';
+	videoElement.src = '_/vid/' + currentMcconnell.clips[currentVideoIndex] + '.mp4';
 }
 
 function nextVideo () {
