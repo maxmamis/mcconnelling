@@ -71,32 +71,7 @@ module.exports = function (grunt) {
             }
 
         },
-
-        jade: {
-            files: {
-                'www/index.html': 'build/kits/index.jade',
-            },
-            dev: {
-                files: ['<%= jade.files %>'],
-                options: {
-                    pretty: true,
-                    data: {
-                        dev: true,
-                        test: 'abc'
-                    }
-                }
-            },
-            
-            deploy: {
-                files: ['<%= jade.files %>'],
-                options: {
-                    pretty: false,
-                    data: {
-                        dev: false
-                    }
-                }
-            }
-        },
+        
         uglify: {
             files: {expand: true, flatten: true, src: ['build/js/**/*.js'], dest: 'www/_/js', filter: 'isFile'},
             

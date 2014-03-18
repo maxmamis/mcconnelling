@@ -80,18 +80,5 @@ app.post('/mcconnells', function (req, res) {
     });
 });
 
-app.get('/cache.manifest', function (req, res) {
-    res.header('Content-Type', 'text/cache-manifest');
-    var cache = ['CACHE MANIFEST'];
-
-    fs.readdir('../app/_/vid', function (err, dir) {
-        for (var i = 0; i < dir.length; i++) {
-            cache.push('/videos/' + dir[i]);
-            // console.log('/videos/' + dir[i]);
-        }
-        res.send(cache.join('\n'));
-    });
-});
-
 app.listen(config.port);
 console.log('Now Mcconnelling on port ' + config.port);

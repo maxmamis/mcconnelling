@@ -51,7 +51,7 @@ function setupNextVideo () {
 		currentVideoIndex = 0;
 	}
 	var	videoElement = getNextVideoElement()[0];
-	videoElement.src = '/videos/' + currentMcconnell.clips[currentVideoIndex] + '.mov';
+	videoElement.src = 'http://mcconnelling.s3-website-us-east-1.amazonaws.com/vid/' + currentMcconnell.clips[currentVideoIndex] + '.mp4';
 }
 
 function nextVideo () {
