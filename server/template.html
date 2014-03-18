@@ -32,14 +32,14 @@
 		<link rel="publisher" href="https://plus.google.com/explore/McConnelling"/>
 
 		<!-- Schema.org markup for Google+ -->
-		<meta itemprop="name" content="#McConnelling">
+		<meta itemprop="name" content="#McConnelling | <%= title %>">
 		<meta itemprop="description" content="The official unofficial #McConnelling generator">
 		<meta itemprop="image" content="">
 
 		<!-- Twitter Card data -->
-		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:card" content="http://mcconnelling.s3-website-us-east-1.amazonaws.com/img/<%= mcconnell.clips[0] %>.jpg">
 		<meta name="twitter:site" content="@publisher_handle">
-		<meta name="twitter:title" content="#McConnelling">
+		<meta name="twitter:title" content="#McConnelling | <%= title %>">
 		<meta name="twitter:description" content="The official unofficial #McConnelling generator">
 		<meta name="twitter:creator" content="@seanmcintyre">
 		<meta name="twitter:creator" content="@maxmamis">
@@ -47,7 +47,7 @@
 		<meta name="twitter:image:src" content="">
 
 		<!-- Open Graph data -->
-		<meta property="og:title" content="#McConnelling" />
+		<meta property="og:title" content="#McConnelling | <%= title %>" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="http://www.mcconnelling.org/view?_id=<%= id %>" />
 		<meta property="og:image" content="http://mcconnelling.s3-website-us-east-1.amazonaws.com/img/<%= mcconnell.clips[0] %>.jpg" />
