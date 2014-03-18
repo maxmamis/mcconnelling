@@ -43,7 +43,12 @@ function welcome () {
 	$('#get-started').on('click', function () {
 		$('#intro').fadeOut("slow", function() {
 			$('#player').fadeIn("slow");
-			$('#editor').fadeIn("slow");
+			$('#editor').fadeIn("slow", function () {
+				$('body').addClass('player_showing');
+				$('body').animate({
+					scrollTop: 400
+				});
+			});
 			// $('body').addClass('player_showing').addClass('editor_showing');
 
 		});
