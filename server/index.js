@@ -8,6 +8,12 @@ var app = express();
 app.use(express.static(__dirname + '/../www'));
 app.use(express.json());
 
+var template;
+
+fs.readFile(__dirname + '/template.html', function (err, file) {
+    template = _.template(file.toString());
+});
+
 function findMcconnell (id, callback) {
     db.collection('mcconnells').findOne({_id: id}, callback);
 }
@@ -36,6 +42,19 @@ function incViewCount (mcconnell) {
 function incShareCount (mcconnell) {
     incProperty(mcconnell, 'shares');
 }
+
+app.get('/view', function (req, res) {
+    var id = req.param('_id');
+    findMcconnell(new db.ObjectId(id), function (err, mcconnell) {
+        var context = {
+            title: mcconnell.title || 'McConnelling.org',
+            mcconnell: mcconnell,
+            id: id
+        };
+
+        res.send(template(context));
+    });
+});
 
 app.get('/mcconnells/:id', function (req, res) {
     var id = req.param('id');
