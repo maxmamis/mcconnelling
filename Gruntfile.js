@@ -37,11 +37,11 @@ module.exports = function (grunt) {
             },
             
             markup: {
-                files: ['build/kit/**/*.kit'],
+                files: ['build/kits/**/*.kit'],
                 tasks: ['copy:dev'],
-                options: {
-                    livereload: true
-                }
+                // options: {
+                //     livereload: true
+                // }
             }
         },
         
