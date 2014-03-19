@@ -139,6 +139,9 @@ body {
 		#player {
 			display: block;
 		}
+		#credits {
+			display: block;
+		}
 	}
 
 	&.editor_showing {
@@ -613,6 +616,8 @@ section {
 		width: 100%;
 		overflow: auto;
 		color: #000;
+		padding-bottom: 25px;
+		text-align: center;
 
 		.btn {
 			background: lighten(@blue, 10%);
@@ -629,10 +634,11 @@ section {
 
 		.popular, .recent {
 			width: 50%;
-			float: left;
+			margin: 0 auto;
+			// float: left;
 
 			h3 {
-				width: 80%;
+				// width: 80%;
 				border-bottom: 1px solid @red;
 				font-size: 32px;
 				font-weight: bold;
@@ -648,11 +654,17 @@ section {
 
 			li.video {
 				display: block;
-				font-size: 32px;
+				font-size: 18px;
 				font-weight: bold;
 				color: @red;
 
 				margin: 5px 0;
+
+				a {
+					&:hover {
+						color: lighten(@red, 20%);
+					}
+				}
 			}
 		}
 	}
@@ -662,16 +674,16 @@ section {
 		h2 {
 			font-family: Georgia;
 			font-style: italic;
-			font-size: 36px;
+			font-size: 18px;
 			margin-bottom: 30px;
 		}
 		a.awesome {
 			color: #fff;
 			font-weight: 900;
-			font-size: 56px;
+			font-size: 24px;
 			padding: 15px;
 			margin-left: 15px;
-			width: 40%;
+			width: 20%;
 			display: inline-block;
 			border: 1px solid #444;
 		}

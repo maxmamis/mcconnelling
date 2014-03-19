@@ -112,6 +112,24 @@
 				</li>
 			</ul>
 		</p>
+
+		<section id="gallery">
+			<div class="inner">
+				<section class="popular">
+					<h3>Most viewed</h3>
+					<ul>
+						<% _.each(mostViewed, function (mcconnell) { %>
+							<li class='video'><a href='/view?_id=<%= mcconnell._id %>'><%= mcconnell.title %></a></li>
+						<% }); %>
+<!-- 						<li class="video">Creep</li>
+						<li class="video">Let It Go</li>
+						<li class="video">Dark Horse</li>
+						<li class="video">Wrecking Ball</li>
+ -->					</ul>
+				</section>
+			</div>
+		</section>
+
 		<section id="credits">
 			<div class="inner">
 				<h2>Design & Development by</h2>

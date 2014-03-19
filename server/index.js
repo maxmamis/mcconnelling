@@ -43,16 +43,39 @@ function incShareCount (mcconnell) {
     incProperty(mcconnell, 'shares');
 }
 
+function getMostViewed (callback) {
+    var cursor = db.collection('mcconnells').find();
+    cursor.limit(10).sort({views: -1});
+    cursor.toArray(callback);
+}
+
 app.get('/view', function (req, res) {
     var id = req.param('_id');
     findMcconnell(new db.ObjectId(id), function (err, mcconnell) {
-        var context = {
-            title: mcconnell.title || 'McConnelling.org',
-            mcconnell: mcconnell,
-            id: id
-        };
+        if (err) {
+            console.error(err);
+        }
+        if (!mcconnell) {
+            return res.redirect('/');
+        }
 
-        res.send(template(context));
+        getMostViewed(function (err, mostViewed) {
+            if (err) {
+                console.error(err);
+            }
+            if (!mostViewed) {
+                mostViewed = [];
+            }
+            console.log(mostViewed);
+            var context = {
+                title: mcconnell.title || 'McConnelling.org',
+                mcconnell: mcconnell,
+                id: id,
+                mostViewed: mostViewed
+            };
+
+            res.send(template(context));
+        });
     });
 });
 
