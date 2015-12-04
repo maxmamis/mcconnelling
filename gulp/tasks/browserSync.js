@@ -7,7 +7,7 @@ var config          = require('../config'),
 // Watch files with BrowserSync server
 gulp.task('serve', ['templates', 'scripts', 'styles', 'bs'], function() {
    gulp.watch(config.styles, ['styles'], bs.reload);
-   gulp.watch(config.scripts, ['scripts']);
+   gulp.watch(config.scripts, ['scripts'], bs.reload);
    gulp.watch(config.templates.src, ['templates'], bs.reload);
 });
 

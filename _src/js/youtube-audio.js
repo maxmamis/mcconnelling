@@ -1,11 +1,5 @@
 var ytPlayer;
 
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
 var currentURL, currentSeconds;
 var readyCallbacks = [];
 
@@ -35,39 +29,6 @@ export var audioplayer = {
     onReady: function (fn) {
         readyCallbacks.push(fn);
     }
-}
-
-export function onYouTubeIframeAPIReady() {
-    ytPlayer = new YT.Player('audioplayer', {
-        height: '1px',
-        width: '1px',
-        playerVars: {
-            autoplay: '1',
-            controls: '0',
-            modestbranding: '1',
-            showinfo: '0',
-            iv_load_policy: '3',
-            rel: '0'
-        }
-    });
-    runReadyCallbacks()
-}
-
-export function onPlayerReady(event) {
-  runReadyCallbacks();
-  event.target.playVideo();
-}
-
-var done = false;
-export function onPlayerStateChange(event) {
-  if (event.data == YT.PlayerState.PLAYING && !done) {
-    setTimeout(stopVideo, 6000);
-    done = true;
-  }
-}
-
-function stopVideo() {
-    ytPlayer.stopVideo();
 }
 
 function runReadyCallbacks () {

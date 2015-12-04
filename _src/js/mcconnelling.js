@@ -52,18 +52,16 @@ export var mcconnelling = {
 };
 
 function getIdFromURL () {
-	var search = window.location.search;
-	var match = search.match(/_id=([\d\w]+)/);
+	let match = window.location.search.match(/_id=([\d\w]+)/);
 	if (match) {
 		return match[1];
-	} else {
-		return null;
 	}
+	return null;
 }
 
 function welcome () {
-	$('#get-started').on('click', function () {
-		$('#intro').fadeOut("slow", function() {
+	//$('#get-started').on('click', function () {
+		//$('#intro').fadeOut("slow", function() {
 			$('#player').fadeIn("slow");
 			$('#editor').fadeIn("slow", function () {
 				$('body').addClass('player_showing');
@@ -71,8 +69,8 @@ function welcome () {
 					scrollTop: 400
 				});
 			});
-		});
-	});
+		//});
+	//});
 }
 
 function loadMcConnellFromID (id) {

@@ -9,18 +9,17 @@ export var editor = {
             revert: true
         });
 
-        $('#sortable').on( 'sortstop', function( event, ui ) {
+        $('#sortable').on('sortstop', function() {
             playNewSequence();
         });
 
-        $('.gallery-clip').on('click', function () {
+        $('.gallery-clip').on('click', function() {
             $('.instructions').remove();
             toggleTimelineClip($(this).data('clip'));
             playNewSequence();
         });
 
-        $('.timeline-clip .close').on('click', function () {
-            console.log('closed');
+        $('.timeline-clip .close').on('click', function() {
             $(this).parent().toggleClass('active');
             playNewSequence();
         });
@@ -79,7 +78,6 @@ function getSound() {
 }
 
 function playNewSequence() {
-    console.log(serializeMcConnell());
     player.load(serializeMcConnell());
     player.play();
 }

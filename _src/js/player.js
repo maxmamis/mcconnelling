@@ -1,11 +1,7 @@
 import $ from 'jquery';
-import {audioplayer} from './youtube-audio.js';
+//import {audioplayer} from './youtube-audio.js';
 
-var $player,
-	$videoElements = [],
-	currentVideoElementIndex = 0,
-	currentMcconnell,
-	currentVideoIndex;
+var $player, $videoElements = [], currentVideoElementIndex = 0, currentMcconnell, currentVideoIndex;
 
 export var player = {
 	init: function () {
@@ -13,24 +9,24 @@ export var player = {
 		createVideoElements();
 	},
 	load: function (mcconnell) {
-		if (!audioplayer.ready) {
-			return audioplayer.onReady(function () {
-				player.load(mcconnell)
-			});
-		}
+		// if (!audioplayer.ready) {
+		// 	return audioplayer.onReady(function () {
+		// 		player.load(mcconnell)
+		// 	});
+		// }
 		currentMcconnell = mcconnell;
 		currentVideoIndex = -1;
-		audioplayer.loadWithUrlAndSeconds(mcconnell.sound.url, mcconnell.sound.start);
+		//audioplayer.loadWithUrlAndSeconds(mcconnell.sound.url, mcconnell.sound.start);
 	},
 	play: function () {
-		if (!audioplayer.ready) {
-			return audioplayer.onReady(function () {
-				player.play()
-			});
-		}
+		// if (!audioplayer.ready) {
+		// 	return audioplayer.onReady(function () {
+		// 		player.play()
+		// 	});
+		// }
 		setupNextVideo();
 		nextVideo();
-		audioplayer.play();
+		//audioplayer.play();
 	}
 };
 
@@ -55,11 +51,11 @@ function setupNextVideo () {
 }
 
 function nextVideo () {
-	if (currentVideoIndex === 0) {
-		audioplayer.loopbackNow();
-	}
+	// if (currentVideoIndex === 0) {
+	// 	audioplayer.loopbackNow();
+	// }
 
-	var $videoElement = $videoElements[currentVideoElementIndex];
+	let $videoElement = $videoElements[currentVideoElementIndex];
 	$videoElement.hide();
 	$videoElement = switchPlayers();
 	$videoElement.show();
