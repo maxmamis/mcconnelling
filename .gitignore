@@ -1,5 +1,5 @@
-node_modules
-app
-www
-config.codekit
+/node_modules
+/app
+/www
+/root
 config.js
