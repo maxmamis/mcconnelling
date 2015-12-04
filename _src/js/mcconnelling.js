@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import {editor} from './editor.js';
 import {player} from './player.js';
+import {audioplayer} from './youtube-audio.js';
 import {networkManager} from './networking.js';
 
 var fbTemplate = '<a href="https://www.facebook.com/sharer/sharer.php?u={$URL}" target="_blank">Share on Facebook</a>';
@@ -21,6 +22,7 @@ export var mcconnelling = {
 
         editor.init();
         player.init();
+        audioplayer.init();
     },
     currentMcConnellId: null,
     getShareURL: function () {
