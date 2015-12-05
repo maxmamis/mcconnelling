@@ -19,8 +19,11 @@ export var player = {
 		audioplayer.loadWithUrlAndSeconds(mcconnell.sound.url, mcconnell.sound.start);
 	},
 	play: function () {
+		console.log('playing? ', audioplayer.ready)
+
 		if (!audioplayer.ready) {
 			return audioplayer.onReady(function () {
+				console.log('audioplayer ready now, playing')
 				player.play()
 			});
 		}

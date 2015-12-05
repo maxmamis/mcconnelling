@@ -9,6 +9,8 @@ var twTemplate =  '<a href="https://twitter.com/share?url={$URL}" target="_blank
 export var mcconnelling = {
     init: function() {
         this.currentMcConnellId = getIdFromURL();
+
+        console.log('initialized w mcconnell id: ', this.currentMcConnellId)
         if (this.currentMcConnellId) {
             $('body').addClass('player_showing');
             $('#solo-share').on('click', function () {
