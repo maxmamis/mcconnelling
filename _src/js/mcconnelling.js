@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import {editor} from './editor.js';
 import {player} from './player.js';
 import {audioplayer} from './youtube-audio.js';
 import {networkManager} from './networking.js';
@@ -19,10 +18,6 @@ export var mcconnelling = {
         } else {
             welcome();
         }
-
-        editor.init();
-        player.init();
-        audioplayer.init();
     },
     currentMcConnellId: null,
     getShareURL: function () {
